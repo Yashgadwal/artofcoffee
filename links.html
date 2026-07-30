@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Art of Coffee — Connect & Explore</title>
+<meta name="description" content="Official links for The Art of Coffee, Ujjain. Access our digital menu, website, locations, WhatsApp, calls, and Instagram." />
+<link rel="icon" type="image/png" href="logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  :root {
+    --ivory: #F8F5EF;
+    --cream: #F2EBDD;
+    --latte: #DCC9A9;
+    --caramel: #8B5E3C;
+    --espresso: #4B2E1F;
+    --gold: #C9A66B;
+  }
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html, body {
+    background: var(--ivory);
+    color: var(--espresso);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    cursor: none;
+    overflow-x: hidden;
+  }
+  @media (max-width: 900px) {
+    html, body { cursor: auto; }
+    .cursor-dot, .cursor-ring { display: none !important; }
+  }
+  .font-display {
+    font-family: 'Fraunces', serif;
+  }
+  .font-serif-it {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .05;
+    z-index: 90;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  /* Custom cursor */
+  .cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--espresso);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width .25s, height .25s, background .25s;
+    mix-blend-mode: multiply;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--caramel);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform .35s ease, width .25s, height .25s, border-color .25s, background .25s;
+  }
+  .cursor-ring.hover {
+    width: 60px;
+    height: 60px;
+    background: rgba(201,166,107,.15);
+    border-color: var(--gold);
+  }
+  .cursor-dot.hover {
+    width: 0;
+    height: 0;
+  }
+  .ring-mark {
+    background: conic-gradient(from 0deg, #C9A66B, #F8F5EF, #C9A66B);
+  }
+  .glass {
+    background: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(24px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, .7);
+    box-shadow: 0 30px 70px -30px rgba(75, 46, 31, .15);
+  }
+  .glass-link {
+    background: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201, 166, 107, .25);
+    transition: all .4s cubic-bezier(.2, .8, .2, 1);
+  }
+  .glass-link:hover {
+    background: var(--espresso);
+    color: var(--ivory);
+    border-color: var(--espresso);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px -10px rgba(75, 46, 31, .3);
+  }
+  .glass-link:active {
+    transform: translateY(1px);
+  }
+  .gold-text {
+    background: linear-gradient(135deg, #C9A66B 0%, #E8D4A3 40%, #C9A66B 70%, #8B6A3A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .pulse-glow {
+    position: relative;
+  }
+  .pulse-glow::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: radial-gradient(circle, rgba(201, 166, 107, .5), transparent 70%);
+    filter: blur(8px);
+    opacity: .7;
+    animation: pulse 2.6s ease-in-out infinite;
+    z-index: -1;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: .35; transform: scale(.97); }
+    50% { opacity: .8; transform: scale(1.03); }
+  }
+  .ambient-glow {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 166, 107, .25), transparent 60%);
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* CSS Animations */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-card {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .animate-link {
+    animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+</style>
+</head>
+<body class="relative flex flex-col items-center min-h-[100svh] px-6 py-12 justify-start">
+<div class="grain"></div>
+<div class="cursor-ring" id="cRing"></div>
+<div class="cursor-dot" id="cDot"></div>
+
+<!-- Ambient background glows -->
+<div class="ambient-glow -top-24 -left-24"></div>
+<div class="ambient-glow -bottom-36 -right-24"></div>
+
+<main class="animate-card w-full max-w-md glass rounded-[38px] px-6 py-12 z-10 text-center relative my-8 md:my-12 shadow-2xl">
+  <!-- Subtle inner shine shimmer -->
+  <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none rounded-[38px]"></div>
+
+  <!-- Café Logo -->
+  <div class="relative">
+    <div class="w-24 h-24 rounded-full overflow-hidden border border-[var(--gold)]/40 p-[1px] mx-auto shadow-xl mb-5 hover:scale-105 transition-transform duration-300">
+      <img src="logo.png" alt="Art of Coffee Logo" class="w-full h-full object-cover rounded-full"/>
+    </div>
+  </div>
+
+  <!-- Header Info -->
+  <h1 class="font-display font-light text-3xl tracking-tight text-[var(--espresso)]">
+    The Art of Coffee
+  </h1>
+  <p class="font-serif-it text-lg text-[var(--caramel)] mt-1">
+    Where Ujjain Meets Premium Café Culture
+  </p>
+  <p class="text-xs uppercase tracking-[0.2em] text-[var(--gold)] mt-3 mb-8 font-semibold">
+    📍 Triveni Vihar, Ujjain
+  </p>
+
+  <!-- Bio Links List -->
+  <div class="space-y-5 max-w-sm mx-auto w-full mt-6">
+    
+    <!-- 1. Digital QR Menu (Highlighted) -->
+    <a href="https://artofcoffee.site.je/" target="_blank" class="animate-link glass-link pulse-glow flex items-center justify-between px-6 py-6 rounded-2xl text-[var(--espresso)] font-semibold shadow-sm group" style="animation-delay: 0.1s;">
+      <span class="flex items-center gap-4">
+        <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-[var(--gold)] to-[var(--caramel)] text-white flex items-center justify-center text-lg">📖</span>
+        <span class="text-left leading-tight">
+          <span>Digital QR Menu</span>
+          <span class="block text-[10px] font-normal opacity-70 mt-0.5">Browse items & order live</span>
+        </span>
+      </span>
+      <svg class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <!-- 2. Main Website -->
+    <a href="index.html" class="animate-link glass-link flex items-center justify-between px-5 py-4 rounded-2xl text-[var(--espresso)] font-medium shadow-sm group" style="animation-delay: 0.2s;">
+      <span class="flex items-center gap-4">
+        <span class="w-9 h-9 rounded-xl bg-[var(--cream)] text-[var(--espresso)] flex items-center justify-center text-lg">🌐</span>
+        <span class="text-left leading-tight">
+          <span>Explore Website</span>
+          <span class="block text-[10px] font-normal opacity-75 mt-0.5">Ambience, Story, & Vibe</span>
+        </span>
+      </span>
+      <svg class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <!-- 3. Google Maps Directions -->
+    <a href="https://maps.google.com/?q=The+Art+of+Coffee,+Triveni+Vihar,+near+D-Mart,+Pawapuri+Colony,+Ujjain" target="_blank" class="animate-link glass-link flex items-center justify-between px-5 py-4 rounded-2xl text-[var(--espresso)] font-medium shadow-sm group" style="animation-delay: 0.3s;">
+      <span class="flex items-center gap-4">
+        <span class="w-9 h-9 rounded-xl bg-[var(--cream)] text-[var(--espresso)] flex items-center justify-center text-lg">📍</span>
+        <span class="text-left leading-tight">
+          <span>Find Us on Maps</span>
+          <span class="block text-[10px] font-normal opacity-75 mt-0.5">Triveni Vihar, Near D-Mart</span>
+        </span>
+      </span>
+      <svg class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <!-- 4. WhatsApp Chat -->
+    <a href="https://wa.me/917580802323?text=Hi%20The%20Art%20of%20Coffee!%20I'd%20like%20to%20inquire%20about%20a%20table%20or%20reservation." target="_blank" class="animate-link glass-link flex items-center justify-between px-5 py-4 rounded-2xl text-[var(--espresso)] font-medium shadow-sm group" style="animation-delay: 0.4s;">
+      <span class="flex items-center gap-4">
+        <span class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg">💬</span>
+        <span class="text-left leading-tight">
+          <span>WhatsApp Chat</span>
+          <span class="block text-[10px] font-normal opacity-75 mt-0.5">Table Bookings & Inquiries</span>
+        </span>
+      </span>
+      <svg class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <!-- 5. Call Us -->
+    <a href="tel:07580802323" class="animate-link glass-link flex items-center justify-between px-5 py-4 rounded-2xl text-[var(--espresso)] font-medium shadow-sm group" style="animation-delay: 0.5s;">
+      <span class="flex items-center gap-4">
+        <span class="w-9 h-9 rounded-xl bg-[var(--cream)] text-[var(--espresso)] flex items-center justify-center text-lg">📞</span>
+        <span class="text-left leading-tight">
+          <span>Call Café</span>
+          <span class="block text-[10px] font-normal opacity-75 mt-0.5">Direct phone connection</span>
+        </span>
+      </span>
+      <svg class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <!-- 6. Instagram -->
+    <a href="https://www.instagram.com/artofcoffee_aoc/" target="_blank" class="animate-link glass-link flex items-center justify-between px-5 py-4 rounded-2xl text-[var(--espresso)] font-medium shadow-sm group" style="animation-delay: 0.6s;">
+      <span class="flex items-center gap-4">
+        <span class="w-9 h-9 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center text-lg">📸</span>
+        <span class="text-left leading-tight">
+          <span>Follow @artofcoffee_aoc</span>
+          <span class="block text-[10px] font-normal opacity-75 mt-0.5">Stories, Reels, & Community</span>
+        </span>
+      </span>
+      <svg class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <!-- Timing details inside card footer -->
+  <div class="mt-8 pt-6 border-t border-[var(--latte)]/30 text-xs text-[var(--caramel)]">
+    Open Daily: 11:00 AM – 11:30 PM
+  </div>
+</main>
+
+<footer class="mt-6 text-center text-xs text-[var(--caramel)] tracking-wider z-10">
+  © 2026 The Art of Coffee · Est. 2023 · Ujjain
+</footer>
+
+<script>
+  /* Custom Cursor Animation */
+  const dot = document.getElementById('cDot'), ring = document.getElementById('cRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  window.addEventListener('mousemove', e => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.transform = `translate(${mx-4}px, ${my-4}px)`;
+  });
+  (function loop() {
+    rx += (mx - rx) * .15;
+    ry += (my - ry) * .15;
+    ring.style.transform = `translate(${rx-21}px, ${ry-21}px)`;
+    requestAnimationFrame(loop);
+  })();
+  
+  document.querySelectorAll('a').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      ring.classList.add('hover');
+      dot.classList.add('hover');
+    });
+    el.addEventListener('mouseleave', () => {
+      ring.classList.remove('hover');
+      dot.classList.remove('hover');
+    });
+  });
+
+
+</script>
+</body>
+</html>
