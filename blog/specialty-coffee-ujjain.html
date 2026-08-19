@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specialty Coffee in Ujjain: Exploring the Rich Brews of Art of Coffee — Art of Coffee Ujjain</title>
+  <meta name="description" content="Learn about specialty coffee in Ujjain, featuring manual brewing, single-origin beans, lattes, cortados, and espresso drinks at Art of Coffee." />
+  <meta name="keywords" content="specialty coffee Ujjain, filter coffee Ujjain, iced latte Ujjain" />
+  <link rel="canonical" href="https://artofcoffeeujjain.vercel.app/blog/specialty-coffee-ujjain.html" />
+  
+  <link rel="icon" type="image/png" href="../logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  
+  <style>
+    :root{
+      --ivory:#F8F5EF; --cream:#F2EBDD; --latte:#DCC9A9;
+      --caramel:#8B5E3C; --espresso:#4B2E1F; --gold:#C9A66B; --sage:#A8B79B;
+    }
+    *{ -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    html,body{ background:var(--ivory); color:var(--espresso); font-family:'Inter',sans-serif; overflow-x:hidden; cursor:none; }
+    @media (max-width: 900px){ html,body{ cursor:auto; } .cursor-dot,.cursor-ring{ display:none!important; } }
+    .font-display{ font-family:'Fraunces',serif; font-optical-sizing:auto; }
+    .font-serif-it{ font-family:'Cormorant Garamond', serif; font-style:italic; }
+
+    /* Glassmorphism */
+    .glass{ background:rgba(248,245,239,.65); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(201,166,107,.15); }
+    
+    /* Button Primary */
+    .btn-primary{ background:linear-gradient(135deg,#4B2E1F,#2E1B11); color:var(--ivory); padding:14px 28px; border-radius:999px; font-weight:500; transition:all .4s; border:1px solid var(--espresso); cursor:none; display:inline-flex; align-items:center; justify-content:center; }
+    .btn-primary:hover{ transform:translateY(-2px); border-color:var(--gold); box-shadow:0 10px 25px rgba(75,46,31,.25); }
+
+    /* Nav Link */
+    .nav-link{ position:relative; padding:8px 0; transition:color .3s; }
+    .nav-link::after{ content:""; position:absolute; left:0; bottom:0; height:1px; width:0; background:var(--caramel); transition:width .4s; }
+    .nav-link:hover::after{ width:100%; }
+
+    /* Custom Cursor (#21) */
+    .cursor-dot{ position:fixed; width:8px; height:8px; border-radius:50%; background:var(--espresso); top:0; left:0; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .25s,height .25s,background .25s; mix-blend-mode:multiply;}
+    .cursor-ring{ position:fixed; width:42px; height:42px; border:1px solid var(--caramel); border-radius:50%; top:0; left:0; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:transform .35s ease, width .25s, height .25s, border-color .25s, background .25s;}
+    .cursor-ring.hover{ width:70px; height:70px; background:rgba(201,166,107,.18); border-color:var(--gold);}
+    .cursor-dot.hover{ width:0; height:0;}
+
+    /* Article layout typography */
+    article p { margin-bottom: 1.5rem; line-height: 1.8; color: rgba(75, 46, 31, 0.88); font-size: 1.05rem; }
+    article a { color: var(--gold); font-weight: 500; transition: color 0.2s; }
+    article a:hover { color: var(--caramel); text-decoration: underline; }
+  </style>
+
+  <!-- Structured SEO Metadata -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Specialty Coffee in Ujjain: Exploring the Rich Brews of Art of Coffee",
+    "description": "Learn about specialty coffee in Ujjain, featuring manual brewing, single-origin beans, lattes, cortados, and espresso drinks at Art of Coffee.",
+    "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1200&q=85",
+    "datePublished": "2026-08-19T14:35:00+05:30",
+    "dateModified": "2026-08-19T14:35:00+05:30",
+    "author": {
+      "@type": "Organization",
+      "name": "The Art of Coffee Ujjain",
+      "url": "https://artofcoffeeujjain.vercel.app/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Art of Coffee Ujjain",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://artofcoffeeujjain.vercel.app/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://artofcoffeeujjain.vercel.app/blog/specialty-coffee-ujjain.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="fixed top-0 inset-x-0 z-50 px-4 lg:px-12 pt-5">
+  <nav class="glass rounded-full max-w-7xl mx-auto flex items-center justify-between px-5 py-3">
+    <a href="../index.html" class="flex items-center gap-2">
+      <div class="w-9 h-9 rounded-full overflow-hidden border border-[var(--gold)]/40 p-[1px]">
+        <img src="../logo.png" alt="Art of Coffee Logo" class="w-full h-full object-cover rounded-full"/>
+      </div>
+      <div class="leading-tight">
+        <div class="font-display font-semibold text-[15px] tracking-tight">Art of Coffee</div>
+        <div class="text-[10px] uppercase tracking-[0.18em] text-[var(--caramel)]">Ujjain</div>
+      </div>
+    </a>
+    <ul class="hidden lg:flex items-center gap-9 text-sm">
+      <li><a href="../index.html#home" class="nav-link">Home</a></li>
+      <li><a href="../index.html#menu" class="nav-link">Menu</a></li>
+      <li><a href="../index.html#bestsellers" class="nav-link">Bestsellers</a></li>
+      <li><a href="../index.html#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="../index.html#mood" class="nav-link">Your Mood</a></li>
+      <li><a href="../index.html#visit" class="nav-link">Visit Us</a></li>
+    </ul>
+    <a href="../index.html#visit" class="btn-primary !py-2.5 !px-5 text-sm">Reserve</a>
+  </nav>
+</header>
+
+<!-- MAIN ARTICLE SECTION -->
+<main class="max-w-4xl mx-auto px-6 pt-32 pb-16">
+  <!-- Breadcrumbs -->
+  <nav class="text-xs uppercase tracking-widest text-[var(--caramel)]/70 mb-4">
+    <a href="../index.html" class="hover:text-[var(--gold)] transition-colors">Home</a> · 
+    <span class="text-[var(--espresso)]/40">Blog</span> · 
+    <span class="text-[var(--espresso)] font-semibold">Coffee Education</span>
+  </nav>
+
+  <!-- Title -->
+  <h1 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-[var(--espresso)] leading-tight tracking-tight">Specialty Coffee in Ujjain: Exploring the Rich Brews of Art of Coffee</h1>
+  
+  <!-- Meta details -->
+  <div class="flex items-center gap-4 text-xs text-[var(--caramel)] mt-6 border-b border-[var(--latte)]/40 pb-6">
+    <span>By <strong>Art of Coffee</strong></span>
+    <span class="opacity-45">|</span>
+    <span>August 19, 2026</span>
+    <span class="opacity-45">|</span>
+    <span>5 min read</span>
+  </div>
+
+  <!-- Featured Image -->
+  <div class="mt-8 rounded-3xl overflow-hidden aspect-[16/9] shadow-2xl relative">
+    <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1200&q=85" alt="Specialty Coffee in Ujjain: Exploring the Rich Brews of Art of Coffee" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-[var(--espresso)]/30 to-transparent"></div>
+  </div>
+
+  <!-- Content Block -->
+  <article class="mt-10 font-serif-it text-lg leading-relaxed text-[var(--espresso)]">
+    <p class="font-sans font-medium text-lg leading-relaxed border-l-2 border-[var(--gold)] pl-5 italic text-[var(--caramel)]">Are you a coffee connoisseur or simply curious about what makes specialty coffee different? Let’s dive into the rich brews of Ujjain.</p>
+    <div class="font-sans text-[var(--espresso)] text-base leading-relaxed mt-8">
+      
+      <p class="mt-6">Coffee is much more than a source of caffeine—it is a complex, aromatic journey. From bean origins to roasting profiles and brewing temperature, every detail counts. At Art of Coffee, we are proud to introduce authentic <strong>specialty coffee to Ujjain</strong>.</p>
+
+      <h2 class="font-display text-2xl mt-10 mb-4 text-[var(--espresso)] font-semibold">Manual Brewing & Single-Origin Beans</h2>
+      <p>We source our coffee beans from high-altitude estates. Each batch is freshly ground to preserve subtle floral and chocolatey tasting notes. Whether you prefer a strong Pour-Over or a traditional South Indian filter coffee, we brew with absolute precision.</p>
+
+      <h2 class="font-display text-2xl mt-10 mb-4 text-[var(--espresso)] font-semibold">Our Signature Coffee Drinks</h2>
+      <p>Ready to try something new? Taste our <em>Salted Caramel Cortado</em>—a perfect balance of bold espresso and sweet milk. Or cool off with our refreshing <em>Vietnamese Iced Latte</em>. We are proud to be the premier destination for <a href="best-cafe-in-ujjain.html" class="underline text-[var(--gold)] hover:text-[var(--caramel)] font-semibold">specialty coffee in Ujjain</a>.</p>
+    
+    </div>
+  </article>
+
+  <!-- Related articles -->
+  <section class="mt-20 pt-10 border-t border-[var(--latte)]/50">
+    <h3 class="font-display font-semibold text-2xl mb-8 text-[var(--espresso)]">Read Next</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+    <a href="weekend-events-ujjain.html" class="glass rounded-3xl overflow-hidden shadow-sm hover:scale-[1.03] transition-all duration-300 group flex flex-col">
+      <div class="h-44 overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=85" alt="Ujjain's Culture Hub: Why Weekend Events at Art of Coffee are a Must-Visit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div class="p-6 flex-grow flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-[var(--gold)] font-bold">Community</span>
+          <h4 class="font-display font-semibold text-lg text-[var(--espresso)] mt-2 line-clamp-2 group-hover:text-[var(--gold)] transition-colors">Ujjain's Culture Hub: Why Weekend Events at Art of Coffee are a Must-Visit</h4>
+        </div>
+        <span class="text-xs text-[var(--caramel)] mt-4 inline-flex items-center gap-1">Read Article →</span>
+      </div>
+    </a>
+  
+    <a href="best-fast-food-bowls-ujjain.html" class="glass rounded-3xl overflow-hidden shadow-sm hover:scale-[1.03] transition-all duration-300 group flex flex-col">
+      <div class="h-44 overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=85" alt="Delicious Cafe Food in Ujjain: From Burnt Garlic Maggi to Peri Peri Fries" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div class="p-6 flex-grow flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-[var(--gold)] font-bold">Foodie Guide</span>
+          <h4 class="font-display font-semibold text-lg text-[var(--espresso)] mt-2 line-clamp-2 group-hover:text-[var(--gold)] transition-colors">Delicious Cafe Food in Ujjain: From Burnt Garlic Maggi to Peri Peri Fries</h4>
+        </div>
+        <span class="text-xs text-[var(--caramel)] mt-4 inline-flex items-center gap-1">Read Article →</span>
+      </div>
+    </a>
+  
+    <a href="students-cafe-guide-ujjain.html" class="glass rounded-3xl overflow-hidden shadow-sm hover:scale-[1.03] transition-all duration-300 group flex flex-col">
+      <div class="h-44 overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=85" alt="A Student's Guide to Affordable and Cool Cafes in Ujjain" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div class="p-6 flex-grow flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-[var(--gold)] font-bold">Student Hub</span>
+          <h4 class="font-display font-semibold text-lg text-[var(--espresso)] mt-2 line-clamp-2 group-hover:text-[var(--gold)] transition-colors">A Student's Guide to Affordable and Cool Cafes in Ujjain</h4>
+        </div>
+        <span class="text-xs text-[var(--caramel)] mt-4 inline-flex items-center gap-1">Read Article →</span>
+      </div>
+    </a>
+  
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="px-6 lg:px-12 pb-10">
+  <div class="max-w-7xl mx-auto border-t border-[var(--latte)]/60 pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full overflow-hidden border border-[var(--gold)]/40 p-[1px]">
+        <img src="../logo.png" alt="Art of Coffee Logo" class="w-full h-full object-cover rounded-full"/>
+      </div>
+      <div>
+        <div class="font-display font-semibold">The Art of Coffee</div>
+        <div class="text-xs text-[var(--caramel)]">Ujjain · Est. 2023</div>
+      </div>
+    </div>
+    <div class="text-xs text-[var(--caramel)] uppercase tracking-[0.2em] flex flex-col sm:flex-row items-center gap-1.5 justify-center">
+      <span>© 2026 · Crafted with care ☕</span>
+    </div>
+    <div class="flex flex-wrap justify-center gap-5 text-sm text-[var(--caramel)]">
+      <a href="https://artofcoffee.site.je/" target="_blank" class="nav-link">Digital Menu</a>
+      <a href="https://www.instagram.com/artofcoffee_aoc/" target="_blank" class="nav-link">Instagram</a>
+      <a href="#" class="nav-link">Zomato</a>
+      <a href="#" class="nav-link">Swiggy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CONTACT ACTIONS -->
+<div class="fixed bottom-6 right-6 z-[99] flex flex-col gap-3">
+  <!-- Call FAB -->
+  <a href="tel:07580802323" class="w-12 h-12 rounded-full glass border border-[var(--gold)]/50 shadow-2xl flex items-center justify-center text-[var(--espresso)] hover:bg-[var(--espresso)] hover:text-[var(--ivory)] hover:scale-110 transition-all duration-300 relative group" title="Call Us">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+    </svg>
+    <span class="absolute right-14 bg-[var(--espresso)] text-[var(--ivory)] text-xs font-medium py-1.5 px-3 rounded-lg shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap">Call Café</span>
+  </a>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/917580802323?text=Hi%20The%20Art%20of%20Coffee!%20I'd%20like%20to%20inquire%20about%20a%20table%20or%20reservation." target="_blank" class="w-12 h-12 rounded-full glass border border-emerald-500/40 shadow-2xl flex items-center justify-center text-emerald-600 hover:bg-emerald-600 hover:text-white hover:scale-110 transition-all duration-300 relative group" title="WhatsApp Us">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12.031 2c-5.514 0-9.989 4.475-9.989 9.99 0 1.763.459 3.483 1.332 5.006L2 22l5.132-1.347c1.472.802 3.125 1.226 4.819 1.226 5.514 0 9.99-4.476 9.99-9.99S17.545 2 12.031 2zm0 18.286c-1.503 0-2.98-.405-4.275-1.171l-.307-.183-3.18.833.847-3.096-.201-.32c-.84-1.336-1.285-2.884-1.285-4.474 0-4.57 3.719-8.289 8.289-8.289 4.57 0 8.289 3.719 8.289 8.289s-3.719 8.289-8.289 8.289zm4.542-6.196c-.249-.125-1.472-.727-1.7-.81-.228-.083-.393-.125-.558.125-.166.249-.641.81-.787.975-.145.166-.29.187-.539.062-.25-.125-1.05-.388-2.001-1.236-.74-.66-1.239-1.475-1.384-1.724-.145-.25-.015-.385.11-.51.113-.113.25-.291.375-.436.125-.145.166-.25.25-.416.083-.166.042-.312-.021-.437-.062-.125-.558-1.349-.763-1.846-.2-.486-.403-.42-.558-.428-.145-.008-.31-.008-.476-.008-.166 0-.436.062-.663.312-.228.25-.871.851-.871 2.078 0 1.226.892 2.41 1.017 2.577.125.166 1.758 2.685 4.258 3.764.595.257 1.06.41 1.423.526.598.19 1.142.163 1.571.099.479-.072 1.472-.601 1.679-1.183.208-.583.208-1.083.146-1.183-.063-.099-.229-.162-.477-.287z"/>
+    </svg>
+    <span class="absolute right-14 bg-[var(--espresso)] text-[var(--ivory)] text-xs font-medium py-1.5 px-3 rounded-lg shadow-xl opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap">WhatsApp Us</span>
+  </a>
+</div>
+
+<!-- Floating Nexora Watermark -->
+<a href="https://instagram.com/nexora.scale" target="_blank" class="fixed bottom-6 left-6 z-[99] flex items-center gap-2.5 px-4 py-2.5 glass border border-[var(--gold)]/40 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 group" title="Website by Nexora Scale">
+  <span class="w-2 h-2 rounded-full bg-[var(--gold)] animate-pulse"></span>
+  <span class="font-display font-bold text-xs tracking-widest text-[var(--espresso)] group-hover:text-[var(--gold)] transition-colors uppercase">by Nexora Scale</span>
+</a>
+
+<!-- Custom cursor helper -->
+<div class="cursor-ring" id="cRing"></div>
+<div class="cursor-dot" id="cDot"></div>
+
+<script>
+  /* ====== CUSTOM CURSOR (#21) ====== */
+  const dot = document.getElementById('cDot'), ring = document.getElementById('cRing');
+  let mx=0,my=0,rx=0,ry=0;
+  window.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; dot.style.transform=`translate(${mx-4}px, ${my-4}px)`;});
+  (function loop(){ rx += (mx-rx)*.15; ry += (my-ry)*.15; ring.style.transform=`translate(${rx-21}px, ${ry-21}px)`; requestAnimationFrame(loop); })();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ ring.classList.add('hover'); dot.classList.add('hover');});
+    el.addEventListener('mouseleave',()=>{ ring.classList.remove('hover'); dot.classList.remove('hover');});
+  });
+</script>
+
+</body>
+</html>
