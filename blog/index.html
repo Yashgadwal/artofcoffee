@@ -37,11 +37,20 @@
     .nav-link::after{ content:""; position:absolute; left:0; bottom:0; height:1px; width:0; background:var(--caramel); transition:width .4s; }
     .nav-link:hover::after{ width:100%; }
 
-    /* Custom Cursor (#21) */
+    /* Custom Cursor */
     .cursor-dot{ position:fixed; width:8px; height:8px; border-radius:50%; background:var(--espresso); top:0; left:0; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .25s,height .25s,background .25s; mix-blend-mode:multiply;}
     .cursor-ring{ position:fixed; width:42px; height:42px; border:1px solid var(--caramel); border-radius:50%; top:0; left:0; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:transform .35s ease, width .25s, height .25s, border-color .25s, background .25s;}
     .cursor-ring.hover{ width:70px; height:70px; background:rgba(201,166,107,.18); border-color:var(--gold);}
     .cursor-dot.hover{ width:0; height:0;}
+
+    /* Animations helper */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeInUp 0.4s ease forwards;
+    }
   </style>
 </head>
 <body>
@@ -79,248 +88,13 @@
   </div>
 
   <!-- Cards Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    
-  <a href="best-cafe-in-ujjain.html" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full">
-    <div class="h-60 overflow-hidden relative">
-      <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85" alt="10 Reasons Why Art of Coffee is the Best Cafe in Ujjain" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">Local Favorites</span>
-    </div>
-    <div class="p-8 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
-          <span>August 19, 2026</span>
-          <span class="opacity-45">•</span>
-          <span>5 min read</span>
-        </div>
-        <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">10 Reasons Why Art of Coffee is the Best Cafe in Ujjain</h3>
-        <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">Discover why Art of Coffee is considered the top cafe in Ujjain, featuring specialty coffee, cozy aesthetics, and delicious fast food near Triveni Vihar.</p>
-      </div>
-      <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
-        Read Article
-        <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </div>
-  </a>
+  <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Loaded dynamically by Javascript pagination -->
+  </div>
 
-  <a href="cozy-hangouts-ujjain.html" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full">
-    <div class="h-60 overflow-hidden relative">
-      <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=85" alt="Looking for Cozy Places to Hangout in Ujjain? Here's Your Ultimate Guide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">Vibe Guide</span>
-    </div>
-    <div class="p-8 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
-          <span>August 19, 2026</span>
-          <span class="opacity-45">•</span>
-          <span>4 min read</span>
-        </div>
-        <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">Looking for Cozy Places to Hangout in Ujjain? Here's Your Ultimate Guide</h3>
-        <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">Explore the absolute best cozy hangout spots and places to chill in Ujjain, featuring comfortable cafes, peaceful corners, and relaxing vibes.</p>
-      </div>
-      <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
-        Read Article
-        <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </div>
-  </a>
-
-  <a href="instagrammable-cafes-ujjain.html" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full">
-    <div class="h-60 overflow-hidden relative">
-      <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1200&q=85" alt="5 Most Instagrammable Cafes in Ujjain to Aesthetic Up Your Feed" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">Aesthetics</span>
-    </div>
-    <div class="p-8 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
-          <span>August 19, 2026</span>
-          <span class="opacity-45">•</span>
-          <span>4 min read</span>
-        </div>
-        <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">5 Most Instagrammable Cafes in Ujjain to Aesthetic Up Your Feed</h3>
-        <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">Looking to aesthetic up your Instagram feed? Here are the most photogenic and Instagrammable cafes in Ujjain with beautiful interiors and coffee art.</p>
-      </div>
-      <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
-        Read Article
-        <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </div>
-  </a>
-
-  <a href="cafes-near-mahakaleshwar-temple.html" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full">
-    <div class="h-60 overflow-hidden relative">
-      <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1200&q=85" alt="Top Cafes Near Mahakaleshwar Temple Ujjain to Relax After Darshan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">Travel Guide</span>
-    </div>
-    <div class="p-8 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
-          <span>August 19, 2026</span>
-          <span class="opacity-45">•</span>
-          <span>5 min read</span>
-        </div>
-        <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">Top Cafes Near Mahakaleshwar Temple Ujjain to Relax After Darshan</h3>
-        <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">Looking for a clean, air-conditioned cafe near Mahakaleshwar Temple in Ujjain? Relax and refresh at Art of Coffee, just a short 10-minute drive away.</p>
-      </div>
-      <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
-        Read Article
-        <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </div>
-  </a>
-
-  <a href="work-friendly-cafes-ujjain.html" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full">
-    <div class="h-60 overflow-hidden relative">
-      <img src="https://images.unsplash.com/photo-1527891751199-7225231a68dd?auto=format&fit=crop&w=1200&q=85" alt="The Best Work-Friendly Cafes in Ujjain with Free Wi-Fi & Cozy Corners" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">Work & Study</span>
-    </div>
-    <div class="p-8 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
-          <span>August 19, 2026</span>
-          <span class="opacity-45">•</span>
-          <span>4 min read</span>
-        </div>
-        <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">The Best Work-Friendly Cafes in Ujjain with Free Wi-Fi & Cozy Corners</h3>
-        <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">Looking for a quiet workspace with high-speed internet in Ujjain? Check out the best study and work-friendly cafes in Ujjain with free Wi-Fi and power plugs.</p>
-      </div>
-      <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
-        Read Article
-        <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </div>
-  </a>
-
-  <a href="romantic-cafe-dates-ujjain.html" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full">
-    <div class="h-60 overflow-hidden relative">
-      <img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=1200&q=85" alt="Romantic Cafe Dates in Ujjain: Where to Take Your Special Someone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">Relationships</span>
-    </div>
-    <div class="p-8 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
-          <span>August 19, 2026</span>
-          <span class="opacity-45">•</span>
-          <span>4 min read</span>
-        </div>
-        <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">Romantic Cafe Dates in Ujjain: Where to Take Your Special Someone</h3>
-        <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">Discover the most romantic cafes and date spots in Ujjain, offering intimate seating, beautiful candle-lit vibes, and sharing plates.</p>
-      </div>
-      <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
-        Read Article
-        <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </div>
-  </a>
-
-  <a href="specialty-coffee-ujjain.html" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full">
-    <div class="h-60 overflow-hidden relative">
-      <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1200&q=85" alt="Specialty Coffee in Ujjain: Exploring the Rich Brews of Art of Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">Coffee Education</span>
-    </div>
-    <div class="p-8 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
-          <span>August 19, 2026</span>
-          <span class="opacity-45">•</span>
-          <span>5 min read</span>
-        </div>
-        <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">Specialty Coffee in Ujjain: Exploring the Rich Brews of Art of Coffee</h3>
-        <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">Learn about specialty coffee in Ujjain, featuring manual brewing, single-origin beans, lattes, cortados, and espresso drinks at Art of Coffee.</p>
-      </div>
-      <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
-        Read Article
-        <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </div>
-  </a>
-
-  <a href="weekend-events-ujjain.html" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full">
-    <div class="h-60 overflow-hidden relative">
-      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=85" alt="Ujjain's Culture Hub: Why Weekend Events at Art of Coffee are a Must-Visit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">Community</span>
-    </div>
-    <div class="p-8 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
-          <span>August 19, 2026</span>
-          <span class="opacity-45">•</span>
-          <span>4 min read</span>
-        </div>
-        <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">Ujjain's Culture Hub: Why Weekend Events at Art of Coffee are a Must-Visit</h3>
-        <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">Discover the cultural heartbeat of Ujjain, featuring open mics, acoustic sessions, and art workshops at Art of Coffee on weekends.</p>
-      </div>
-      <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
-        Read Article
-        <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </div>
-  </a>
-
-  <a href="best-fast-food-bowls-ujjain.html" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full">
-    <div class="h-60 overflow-hidden relative">
-      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=85" alt="Delicious Cafe Food in Ujjain: From Burnt Garlic Maggi to Peri Peri Fries" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">Foodie Guide</span>
-    </div>
-    <div class="p-8 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
-          <span>August 19, 2026</span>
-          <span class="opacity-45">•</span>
-          <span>4 min read</span>
-        </div>
-        <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">Delicious Cafe Food in Ujjain: From Burnt Garlic Maggi to Peri Peri Fries</h3>
-        <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">Looking for the best cafe food and fast food in Ujjain? Read about the mouth-watering snacks, garlic maggi, and fries at Art of Coffee.</p>
-      </div>
-      <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
-        Read Article
-        <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </div>
-  </a>
-
-  <a href="students-cafe-guide-ujjain.html" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full">
-    <div class="h-60 overflow-hidden relative">
-      <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=85" alt="A Student's Guide to Affordable and Cool Cafes in Ujjain" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">Student Hub</span>
-    </div>
-    <div class="p-8 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
-          <span>August 19, 2026</span>
-          <span class="opacity-45">•</span>
-          <span>4 min read</span>
-        </div>
-        <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">A Student's Guide to Affordable and Cool Cafes in Ujjain</h3>
-        <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">Find the best affordable, budget-friendly student cafes in Ujjain with free Wi-Fi, cool hangout spots, and discount menu options.</p>
-      </div>
-      <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
-        Read Article
-        <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </div>
-    </div>
-  </a>
-
+  <!-- Pagination Controls -->
+  <div class="flex justify-center items-center gap-2 mt-16 font-sans" id="pagination-controls">
+    <!-- Loaded dynamically -->
   </div>
 </main>
 
@@ -387,6 +161,582 @@
     el.addEventListener('mouseenter',()=>{ ring.classList.add('hover'); dot.classList.add('hover');});
     el.addEventListener('mouseleave',()=>{ ring.classList.remove('hover'); dot.classList.remove('hover');});
   });
+
+  
+  const blogs = [
+  {
+    "filename": "best-cafe-in-ujjain.html",
+    "title": "10 Reasons Why Art of Coffee is the Best Cafe in Ujjain",
+    "description": "Discover why Art of Coffee is considered the top cafe in Ujjain, featuring specialty coffee, cozy aesthetics, and delicious fast food near Triveni Vihar.",
+    "category": "Local Favorites",
+    "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85",
+    "date": "August 19, 2026",
+    "readTime": "5 min read"
+  },
+  {
+    "filename": "instagrammable-cafes-ujjain.html",
+    "title": "5 Most Instagrammable Cafes in Ujjain to Aesthetic Up Your Feed",
+    "description": "Looking to aesthetic up your Instagram feed? Here are the most photogenic and Instagrammable cafes in Ujjain with beautiful interiors and coffee art.",
+    "category": "Aesthetics",
+    "image": "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1200&q=85",
+    "date": "August 19, 2026",
+    "readTime": "4 min read"
+  },
+  {
+    "filename": "manual-coffee-brewing-methods-ujjain.html",
+    "title": "A Deep Dive into Manual Brewing Methods: Chemex, AeroPress & V60 in Ujjain",
+    "description": "Learn the differences between Chemex, French Press, AeroPress, and V60 manual coffee brewing. Discover where to find specialty coffee in Ujjain.",
+    "category": "Food & Coffee",
+    "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "harsiddhi-temple-ujjain-guide.html",
+    "title": "A Guide to Harsiddhi Temple Ujjain: Rituals, History, and Cafes Nearby",
+    "description": "Discover the ancient history and lighting rituals of Harsiddhi Temple in Ujjain. Read tips on when to visit and where to find peaceful eateries.",
+    "category": "Travel & Culture",
+    "image": "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "hosting-private-meetups-creative-workshop-ujjain.html",
+    "title": "A Guide to Hosting Private Meetups and Creative Workshops in Ujjain",
+    "description": "Looking to host a design meetup, startup networking event, or private seminar in Ujjain? Read about the top functional cafe event venues.",
+    "category": "Art & Community",
+    "image": "https://images.unsplash.com/photo-1527891751199-7225231a68dd?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "students-cafe-guide-ujjain.html",
+    "title": "A Student's Guide to Affordable and Cool Cafes in Ujjain",
+    "description": "Find the best affordable, budget-friendly student cafes in Ujjain with free Wi-Fi, cool hangout spots, and discount menu options.",
+    "category": "Student Hub",
+    "image": "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=85",
+    "date": "August 19, 2026",
+    "readTime": "4 min read"
+  },
+  {
+    "filename": "students-balancing-exams-cafe-hangouts.html",
+    "title": "A Student's Guide to Balancing Exam Prep and Café Hangouts in Ujjain",
+    "description": "Stressed about exams? Discover how to blend social study sessions with productive cafe breaks, balancing stress and good grades in Ujjain.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "best-cold-coffee-frappes-ujjain.html",
+    "title": "Best Cold Coffee and Frappes in Ujjain to Beat the Summer Heat",
+    "description": "Looking for a refreshing cold brew or thick chocolate shake in Ujjain? Check out the best cold coffees, frappes, and shakes in the city.",
+    "category": "Food & Coffee",
+    "image": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "best-hot-shakes-teas-ujjain-winter.html",
+    "title": "Best Hot Shakes, Teas, and Soups in Ujjain for Cozy Rainy Days",
+    "description": "Find the best warm beverages to enjoy during monsoons and winters in Ujjain, including spiced teas, hot chocolates, and cozy soups.",
+    "category": "Food & Coffee",
+    "image": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "street-food-vs-cozy-cafes-ujjain.html",
+    "title": "Best Street Food in Ujjain vs. Cozy Cafes: Where to Eat What",
+    "description": "Comparing Ujjains famous street food (poha, kachori) with its modern air-conditioned cozy cafes. Discover the best of both culinary worlds.",
+    "category": "Food & Coffee",
+    "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "celebrating-festivals-ujjain-cafes.html",
+    "title": "Celebrating Festivals in Ujjain: How Modern Cafes Blend Tradition with Vibe",
+    "description": "From Diwali lights to holi thandai shakes. Discover how modern cafes in Ujjain celebrate Indian festivals with aesthetic themed menus and decor.",
+    "category": "Art & Community",
+    "image": "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "chintaman-ganesh-temple-ujjain-food.html",
+    "title": "Chintaman Ganesh Temple Ujjain: History, Vibe, and Food Recommendations",
+    "description": "Planning a visit to Chintaman Ganesh Temple in Ujjain? Learn about its historical links to Ramayana, peaceful energy, and best places to eat.",
+    "category": "Travel & Culture",
+    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "perfect-cafe-study-routine-tips.html",
+    "title": "Creating the Perfect Café Study Routine: Tips for Ujjain Students",
+    "description": "Boost your exam preparation. Read our actionable tips on how to choose the right cafe corner, manage distraction, and utilize caffeine for study.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1527891751199-7225231a68dd?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "best-fast-food-bowls-ujjain.html",
+    "title": "Delicious Cafe Food in Ujjain: From Burnt Garlic Maggi to Peri Peri Fries",
+    "description": "Looking for the best cafe food and fast food in Ujjain? Read about the mouth-watering snacks, garlic maggi, and fries at Art of Coffee.",
+    "category": "Foodie Guide",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=85",
+    "date": "August 19, 2026",
+    "readTime": "4 min read"
+  },
+  {
+    "filename": "polaroid-galleries-custom-art-displays.html",
+    "title": "Exploring Indie Art: Polaroid Galleries and Custom Art Displays in Ujjain",
+    "description": "Discover how modern cafes in Ujjain are integrating indie art galleries, polaroid photo walls, and local paintings into their dining layouts.",
+    "category": "Art & Community",
+    "image": "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "shipra-river-ghats-food-guide.html",
+    "title": "Exploring Shipra River Ghats: History, Evening Aarti, and Nearby Eats",
+    "description": "Explore the historical Ram Ghat and other holy Shipra River banks in Ujjain. Learn about the evening Shipra Aarti and where to grab fresh food nearby.",
+    "category": "Travel & Culture",
+    "image": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "healthy-eating-low-calorie-cafe-drinks.html",
+    "title": "Healthy Eating at Cafes: How to Order Low-Calorie Drinks and Food in Ujjain",
+    "description": "Maintain your diet while socializing. Learn how to order healthy, low-calorie brews, green teas, and light food at Art of Coffee in Ujjain.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "two-day-spiritual-culinary-trip-ujjain.html",
+    "title": "How to Plan a 2-Day Spiritual and Culinary Trip to Ujjain",
+    "description": "Make the most of 48 hours in Ujjain. Our curated 2-day itinerary covers sacred temples, evening aartis on Shipra River, and the best local coffee shop spaces.",
+    "category": "Travel & Culture",
+    "image": "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "how-to-prep-for-your-first-standup-comedy-ujjain.html",
+    "title": "How to Prep for Your First Stand-Up Comedy Open Mic in Ujjain",
+    "description": "Want to try stand-up comedy? Learn how to write your first set, practice delivery, and register for local open mics in Ujjain.",
+    "category": "Art & Community",
+    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "college-students-shaping-hangout-spaces.html",
+    "title": "How Ujjain's College Students are Shaping the City's Cozy Hangout Spaces",
+    "description": "See how Ujjain's university student community is driving the demand for high-speed Wi-Fi, affordable fast food, and aesthetic cafes.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "kal-bhairav-temple-ujjain-mystical-legend.html",
+    "title": "Kal Bhairav Temple Ujjain: The Mystical Legend and Where to Relax Nearby",
+    "description": "Explore the mysterious legends of the Kal Bhairav Temple in Ujjain, where liquor is offered to the deity, and discover where to relax after your visit.",
+    "category": "Travel & Culture",
+    "image": "https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "cozy-hangouts-ujjain.html",
+    "title": "Looking for Cozy Places to Hangout in Ujjain? Here's Your Ultimate Guide",
+    "description": "Explore the absolute best cozy hangout spots and places to chill in Ujjain, featuring comfortable cafes, peaceful corners, and relaxing vibes.",
+    "category": "Vibe Guide",
+    "image": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=85",
+    "date": "August 19, 2026",
+    "readTime": "4 min read"
+  },
+  {
+    "filename": "mangalnath-temple-ujjain-mars-guide.html",
+    "title": "Mangalnath Temple Ujjain: The Birthplace of Mars and Nearby Cafes",
+    "description": "Learn the astrological significance of Mangalnath Temple in Ujjain, the geological origin of planet Mars, and where to grab high-quality coffee nearby.",
+    "category": "Travel & Culture",
+    "image": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "romantic-cafe-dates-ujjain.html",
+    "title": "Romantic Cafe Dates in Ujjain: Where to Take Your Special Someone",
+    "description": "Discover the most romantic cafes and date spots in Ujjain, offering intimate seating, beautiful candle-lit vibes, and sharing plates.",
+    "category": "Relationships",
+    "image": "https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=1200&q=85",
+    "date": "August 19, 2026",
+    "readTime": "4 min read"
+  },
+  {
+    "filename": "sandipani-ashram-ujjain-history-spots.html",
+    "title": "Sandipani Ashram Ujjain: Where Lord Krishna Studied, and Best Chill Spots",
+    "description": "Take a historical tour of Sandipani Ashram in Ujjain, where Lord Krishna and Sudama studied. Find out the best spots to chill and eat nearby.",
+    "category": "Travel & Culture",
+    "image": "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "specialty-coffee-ujjain.html",
+    "title": "Specialty Coffee in Ujjain: Exploring the Rich Brews of Art of Coffee",
+    "description": "Learn about specialty coffee in Ujjain, featuring manual brewing, single-origin beans, lattes, cortados, and espresso drinks at Art of Coffee.",
+    "category": "Coffee Education",
+    "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1200&q=85",
+    "date": "August 19, 2026",
+    "readTime": "5 min read"
+  },
+  {
+    "filename": "local-artists-acoustic-live-music-ujjain.html",
+    "title": "Spotlighting Local Artists: Acoustic Live Music Scenes in Ujjain",
+    "description": "Experience Ujjains growing indie music scene. Read about the acoustic live music evenings, guitar covers, and local musicians in Ujjain.",
+    "category": "Art & Community",
+    "image": "https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "best-cafes-morning-meetings-ujjain.html",
+    "title": "The Best Cafes in Ujjain for Morning Meetings and Networking Sessions",
+    "description": "Looking to network or host a business meeting in Ujjain? Discover the top quiet cafes offering morning coffee, fast Wi-Fi, and professional layouts.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1527891751199-7225231a68dd?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "work-friendly-cafes-ujjain.html",
+    "title": "The Best Work-Friendly Cafes in Ujjain with Free Wi-Fi & Cozy Corners",
+    "description": "Looking for a quiet workspace with high-speed internet in Ujjain? Check out the best study and work-friendly cafes in Ujjain with free Wi-Fi and power plugs.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1527891751199-7225231a68dd?auto=format&fit=crop&w=1200&q=85",
+    "date": "August 19, 2026",
+    "readTime": "4 min read"
+  },
+  {
+    "filename": "evolution-cafe-culture-ujjain.html",
+    "title": "The Evolution of Cafe Culture in Ujjain: From Street Tea to Specialty Brews",
+    "description": "A deep look at how Ujjain transitioned from traditional tapri chai to premium manual coffee, espresso bars, and aesthetic third-wave cafes.",
+    "category": "Food & Coffee",
+    "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "freelancers-guide-coworking-study-ujjain.html",
+    "title": "The Freelancer's Guide to Coworking and Study Spots in Ujjain",
+    "description": "Working remotely from Ujjain? Discover the ultimate spots for freelancers, containing high-speed internet, quiet environments, and premium coffee.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1527891751199-7225231a68dd?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "impact-board-game-cafes-ujjain.html",
+    "title": "The Impact of Board Game Cafes on Social Interaction in Ujjain",
+    "description": "Put down your screens. Learn how board game cafes are bringing friends and families together in Ujjain over Catan, Monopoly, and lattes.",
+    "category": "Art & Community",
+    "image": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "community-spaces-connecting-ujjain-youth.html",
+    "title": "The Importance of Community Spaces: How Art of Coffee Connects Ujjain's Youth",
+    "description": "Explore how safe, modern, and inclusive community spaces in Ujjain are fostering creative collaborations, startups, and lasting friendships.",
+    "category": "Art & Community",
+    "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "rise-digital-nomads-tier-2-ujjain.html",
+    "title": "The Rise of Digital Nomads in Tier-2 Cities: Why Ujjain is a Great Base",
+    "description": "Explore why digital nomads are choosing spiritual hubs like Ujjain as remote work bases, blending peace, rich culture, and modern internet cafes.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "science-coffee-roasting-art-of-coffee.html",
+    "title": "The Science of Coffee Roasting: Why Art of Coffee Beans Taste Different",
+    "description": "Discover how roasting profiles affect the flavor of your coffee. Learn about light, medium, and dark roasts and how we brew them in Ujjain.",
+    "category": "Food & Coffee",
+    "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "ultimate-travelers-guide-to-ujjain.html",
+    "title": "The Ultimate Traveler's Guide to Ujjain: Places to Visit, Eat, and Stay",
+    "description": "Your complete traveler guide to Ujjain. Learn the best times to visit, must-see heritage monuments, local food specialties, and cozy cafe locations.",
+    "category": "Travel & Culture",
+    "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "things-to-do-in-ujjain-after-mahakal.html",
+    "title": "Top 10 Things to Do in Ujjain After Visiting Mahakaleshwar Temple",
+    "description": "Planning your trip to Mahakal? Discover the top 10 things to do in Ujjain after visiting the Mahakaleshwar Temple, including food guides and heritage spots.",
+    "category": "Travel & Culture",
+    "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "affordable-group-party-places-ujjain.html",
+    "title": "Top Affordable Group Party Places in Ujjain for Birthdays and Anniversaries",
+    "description": "Looking to host a birthday party or get-together in Ujjain? Find affordable group dining packages, mocktail setups, and beautiful cafe reservations.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "top-air-conditioned-work-cafes-ujjain.html",
+    "title": "Top Air-Conditioned Work Cafes in Ujjain with Quiet Zones",
+    "description": "Beat the heat and finish your work. Check out Ujjains top air-conditioned work cafes, offering quiet seating and premium coffee beans.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "cafes-near-mahakaleshwar-temple.html",
+    "title": "Top Cafes Near Mahakaleshwar Temple Ujjain to Relax After Darshan",
+    "description": "Looking for a clean, air-conditioned cafe near Mahakaleshwar Temple in Ujjain? Relax and refresh at Art of Coffee, just a short 10-minute drive away.",
+    "category": "Travel Guide",
+    "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1200&q=85",
+    "date": "August 19, 2026",
+    "readTime": "5 min read"
+  },
+  {
+    "filename": "italian-pasta-pizzas-ujjain.html",
+    "title": "Top Places to Find Authentic Italian Pasta and Pizzas in Ujjain",
+    "description": "Craving cheesy white sauce pasta or thin-crust pizza in Ujjain? Discover the top cafes serving delicious Italian-inspired vegetarian snacks.",
+    "category": "Food & Coffee",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "top-vegetarian-restaurants-cafes-ujjain.html",
+    "title": "Top Vegetarian Restaurants and Cafes in Ujjain: A Foodie's Checklist",
+    "description": "Explore the absolute best vegetarian food places, cafes, and premium restaurants in Ujjain. Taste the best pasta, garlic breads, and coffee.",
+    "category": "Food & Coffee",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "weekend-events-ujjain.html",
+    "title": "Ujjain's Culture Hub: Why Weekend Events at Art of Coffee are a Must-Visit",
+    "description": "Discover the cultural heartbeat of Ujjain, featuring open mics, acoustic sessions, and art workshops at Art of Coffee on weekends.",
+    "category": "Community",
+    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=85",
+    "date": "August 19, 2026",
+    "readTime": "4 min read"
+  },
+  {
+    "filename": "ujjain-weekend-guide-how-to-relax.html",
+    "title": "Ujjain's Weekend Guide: How to Relax, Unwind, and Re-energize",
+    "description": "Make your weekend perfect in Ujjain. Our guide covers relaxing boat rides on Shipra river, temple walks, open mic events, and premium coffee.",
+    "category": "Work & Study",
+    "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "understanding-coffee-processing-washed-natural.html",
+    "title": "Understanding Coffee Processing: Natural vs. Washed Beans Explained for Ujjain Coffee Lovers",
+    "description": "Learn how coffee processing methods shape tasting profiles. Discover the difference between natural, washed, and honey processing.",
+    "category": "Food & Coffee",
+    "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "acoustic-music-vs-loud-dj-nights.html",
+    "title": "Unplugged Evenings: Why Acoustic Music Beats Loud DJ Nights in Ujjain",
+    "description": "Discover the growing preference for quiet, unplugged acoustic cafe music over loud club DJ nights in Ujjain for weekend relaxation.",
+    "category": "Art & Community",
+    "image": "https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "paint-pottery-art-workshops-ujjain.html",
+    "title": "Unwinding with Art: The Popularity of Paint & Pottery Workshops in Ujjain",
+    "description": "Discover how weekend art, canvas painting, and clay pottery workshops are helping Ujjain locals relax, socialize, and learn new skills.",
+    "category": "Art & Community",
+    "image": "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "vedh-shala-jantar-mantar-ujjain-guide.html",
+    "title": "Vedh Shala (Jantar Mantar) Ujjain: India's Oldest Observatory & Food Guide",
+    "description": "Step into history at Vedh Shala, the ancient astronomical observatory in Ujjain built by Raja Jai Singh. Learn about solar instruments and nearby food options.",
+    "category": "Travel & Culture",
+    "image": "https://images.unsplash.com/photo-1527891751199-7225231a68dd?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "why-cortados-macchiatos-popular-ujjain.html",
+    "title": "Why Cortados and Macchiatos are Gaining Popularity Among Ujjain's Youth",
+    "description": "Discover why strong, espresso-forward drinks like Cortados and Macchiatos are replacing sugary lattes among coffee lovers in Ujjain.",
+    "category": "Food & Coffee",
+    "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  },
+  {
+    "filename": "open-mic-nights-creative-community-ujjain.html",
+    "title": "Why Open Mic Nights are Essential for Ujjain's Creative Community",
+    "description": "Open mic events are shaping Ujjains youth culture. Read how platforms for stand-up comedy, poetry, and indie music build local confidence.",
+    "category": "Art & Community",
+    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=85",
+    "date": "undefined",
+    "readTime": "undefined"
+  }
+];
+  const limit = 9;
+  let currentPage = 1;
+
+  function renderBlogs(page) {
+    const grid = document.getElementById('blog-grid');
+    const start = (page - 1) * limit;
+    const end = page * limit;
+    const items = blogs.slice(start, end);
+
+    grid.innerHTML = items.map(b => `
+      <a href="${b.filename}" class="glass rounded-[32px] overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 group flex flex-col h-full opacity-0 translate-y-4 animate-fade-in">
+        <div class="h-60 overflow-hidden relative">
+          <img src="${b.image}" alt="${b.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-[var(--espresso)] text-white text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full border border-[var(--gold)]/30">${b.category}</span>
+        </div>
+        <div class="p-8 flex-grow flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 text-xs text-[var(--caramel)] font-semibold mb-3">
+              <span>${b.date}</span>
+              <span class="opacity-45">•</span>
+              <span>${b.readTime}</span>
+            </div>
+            <h3 class="font-display font-semibold text-2xl text-[var(--espresso)] leading-snug group-hover:text-[var(--gold)] transition-colors">${b.title}</h3>
+            <p class="text-sm text-[var(--espresso)]/75 mt-3 line-clamp-3">${b.description}</p>
+          </div>
+          <div class="mt-6 inline-flex items-center gap-1.5 font-semibold text-sm text-[var(--gold)] group-hover:text-[var(--caramel)] transition-colors">
+            Read Article
+            <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+    `).join('');
+
+    // Animate item display fades
+    const cards = grid.querySelectorAll('a');
+    cards.forEach((card, idx) => {
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, idx * 60);
+    });
+
+    renderControls(page);
+    bindCursor();
+  }
+
+  function renderControls(page) {
+    const controls = document.getElementById('pagination-controls');
+    const totalPages = Math.ceil(blogs.length / limit);
+    let html = '';
+
+    if (totalPages <= 1) {
+      controls.innerHTML = '';
+      return;
+    }
+
+    // Prev button
+    if (page > 1) {
+      html += `<button onclick="setPage(${page - 1})" class="px-4 py-2 rounded-full glass hover:bg-[var(--espresso)] hover:text-[var(--ivory)] transition-all font-semibold text-xs tracking-wider uppercase flex items-center gap-1">« Prev</button>`;
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === page) {
+        html += `<span class="w-9 h-9 rounded-full flex items-center justify-center bg-[var(--espresso)] text-[var(--ivory)] border border-[var(--espresso)] font-bold text-sm">${i}</span>`;
+      } else {
+        html += `<button onclick="setPage(${i})" class="w-9 h-9 rounded-full flex items-center justify-center glass border border-[var(--gold)]/20 text-[var(--espresso)] hover:border-[var(--gold)] hover:bg-[var(--gold)]/10 font-bold text-sm transition-all">${i}</button>`;
+      }
+    }
+
+    // Next button
+    if (page < totalPages) {
+      html += `<button onclick="setPage(${page + 1})" class="px-4 py-2 rounded-full glass hover:bg-[var(--espresso)] hover:text-[var(--ivory)] transition-all font-semibold text-xs tracking-wider uppercase flex items-center gap-1">Next »</button>`;
+    }
+
+    controls.innerHTML = html;
+    bindCursorControls();
+  }
+
+  function setPage(page) {
+    currentPage = page;
+    window.location.hash = 'page=' + page;
+    renderBlogs(page);
+    
+    // Smooth scroll to grid top
+    const target = document.getElementById('blog-grid').getBoundingClientRect().top + window.scrollY - 120;
+    window.scrollTo({ top: target, behavior: 'smooth' });
+  }
+
+  function bindCursor() {
+    const ring = document.getElementById('cRing');
+    const dot = document.getElementById('cDot');
+    if (!ring || !dot) return;
+    document.querySelectorAll('#blog-grid a').forEach(el => {
+      el.addEventListener('mouseenter', () => { ring.classList.add('hover'); dot.classList.add('hover'); });
+      el.addEventListener('mouseleave', () => { ring.classList.remove('hover'); dot.classList.remove('hover'); });
+    });
+  }
+
+  function bindCursorControls() {
+    const ring = document.getElementById('cRing');
+    const dot = document.getElementById('cDot');
+    if (!ring || !dot) return;
+    document.querySelectorAll('#pagination-controls button').forEach(el => {
+      el.addEventListener('mouseenter', () => { ring.classList.add('hover'); dot.classList.add('hover'); });
+      el.addEventListener('mouseleave', () => { ring.classList.remove('hover'); dot.classList.remove('hover'); });
+    });
+  }
+
+  // Initial load parsing hash page
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#page=')) {
+      const page = parseInt(hash.replace('#page=', ''));
+      if (page && page > 0 && page <= Math.ceil(blogs.length / limit)) {
+        currentPage = page;
+      }
+    }
+    renderBlogs(currentPage);
+  });
+
 </script>
 
 </body>
