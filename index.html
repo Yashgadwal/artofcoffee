@@ -135,9 +135,7 @@
   .badge-gold{ background:linear-gradient(135deg,#C9A66B,#E8D4A3); color:#3a2412; font-weight:600; font-size:11px; letter-spacing:.12em; padding:5px 12px; border-radius:999px; text-transform:uppercase;}
   .badge-hot{ background:linear-gradient(135deg,#E5673E,#C9402A); color:#fff;}
 
-  /* Sticky CTA */
-  .sticky-cta{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); z-index:80; opacity:0; transition:opacity .5s, transform .5s;}
-  .sticky-cta.show{ opacity:1;}
+
 
   /* Hero glow */
   .hero-glow{ position:absolute; inset:0; background:radial-gradient(ellipse at 60% 40%, rgba(201,166,107,.35), transparent 60%); pointer-events:none;}
@@ -815,11 +813,6 @@
   </div>
 </aside>
 
-<!-- STICKY CTA -->
-<a href="#menu" id="stickyCta" class="sticky-cta btn-primary pulse-glow flex items-center gap-2 shadow-2xl">
-  <span class="w-2 h-2 rounded-full bg-[var(--gold)]"></span>
-  <span>Order Now · View Menu</span>
-</a>
 
 <script>
   /* ====== CUSTOM CURSOR (#21) ====== */
@@ -950,11 +943,6 @@
     });
   });
 
-  /* ====== STICKY CTA ====== */
-  const cta = document.getElementById('stickyCta');
-  window.addEventListener('scroll', ()=>{
-    if(window.scrollY > 700) cta.classList.add('show'); else cta.classList.remove('show');
-  });
 
   /* ====== TIME-OF-DAY SHIFT (#45) ====== */
   const tod = document.getElementById('todOverlay');
