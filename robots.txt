@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yashgadwal.github.io/artofcoffee/sitemap.xml
+Sitemap: https://artofcoffeeujjain.vercel.app/sitemap.xml
